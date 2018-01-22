@@ -1,2 +1,2 @@
 # collections
-Simple library with generic collections
+This is simple java collections library with most used structures
