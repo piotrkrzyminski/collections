@@ -23,6 +23,7 @@ This is simple java collections library with most used structures
   <li>Replace element in index</li>
   <li>Convert to simple array</li>
   <li>Trim to specified size</li>
+  <li>ArrayList iterator</li>
   </ul>
   </body>
 </html>
