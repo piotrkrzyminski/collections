@@ -13,7 +13,7 @@ Added generic ArrayList implementation:
 </ul>
   
   
-<h2>ArrayList</h2></br>
+<h2>ArrayList</h2>
 This structure uses simple array to store generic elements. Start size of structure must be specified.
 If array is filled then copy all element to bigger array to allow to add new elements.
 Available methods:
