@@ -21,5 +21,7 @@ Available methods:
   <li><i>trimToSize()</i> - changes size of list to fill all elements and avoid unnecesary memory alocation</li>
   <li><i>toArray()</i> - returns array with elements copied from list</li>
   </ol>
+  
+  Every method was tested using jUnit library
   </body>
  </html>
