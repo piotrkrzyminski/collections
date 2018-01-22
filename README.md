@@ -14,10 +14,6 @@ This is simple java collections library with most used structures
   <li>Clearing array</li>
   <li>Returning if structure is empty</li>
   <li>Returning number of elements in list</li>
-  </ul>
-  Every methods was tested by junit tests</br>
-<h5>TODO</h5>
-  <ul>
   <li>Check if list contains specified element</li>
   <li>Get index of specified element</li>
   <li>Replace element in index</li>
