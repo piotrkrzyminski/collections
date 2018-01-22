@@ -7,5 +7,5 @@ public interface Collection<E> {
 	public boolean add(E e);
 	public void clear() throws EmptyListException;
 	public int size();
-	boolean equals(Object o);
+	public boolean equals(Object o);
 }

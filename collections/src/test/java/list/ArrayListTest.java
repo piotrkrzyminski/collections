@@ -6,6 +6,20 @@ import static org.junit.Assert.*;
 public class ArrayListTest {
 	
 	@Test
+	public void testNonParameterConstructor() {
+		List<Integer> list = new ArrayList<Integer>();
+		assertTrue(list.isEmpty());
+		assertEquals(list.size(), 0);
+	}
+	
+	@Test
+	public void testIntParameterConstructor() {
+		List<Integer> list = new ArrayList<Integer>(10);
+		assertTrue(list.isEmpty());
+		assertEquals(list.size(), 0);
+	}
+	
+	@Test
 	public void testEmptyList1() {
 		List<Integer> list = new ArrayList<Integer>(10);
 		assertTrue(list.isEmpty());
@@ -121,5 +135,23 @@ public class ArrayListTest {
 		List<Integer> list = new ArrayList<Integer>(10);
 		
 		list.remove(-1);
+	}
+	
+	@Test
+	public void testListCloning() throws IllegalArgumentException, EmptyListException {
+		List<Integer> list = new ArrayList<Integer>(10);
+		
+		for(int i = 0; i < 5; i++)
+			list.add(Integer.valueOf(i));
+		
+		List<Integer> clonedList = new ArrayList<Integer>(list);
+		
+		assertEquals(list.size(), clonedList.size());
+		
+		for(int i = 0; i < 5; i++) {
+			assertTrue(list.get(i) != null);
+			assertTrue(list.get(i).equals(clonedList.get(i)));
+		}
+		
 	}
 }

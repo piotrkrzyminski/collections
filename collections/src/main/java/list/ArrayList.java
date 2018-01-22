@@ -1,16 +1,37 @@
 package list;
 
+import collections.Collection;
+
 public class ArrayList<E> implements List<E> {
 	private int size;
 	private int defaultSize;
 	private int index;
 	private E[] array;
 	
+	public ArrayList() {
+		this.size = 100;
+		this.defaultSize = this.size;
+		array = (E[]) new Object[this.size]; 
+		index = 0;
+	}
+	
 	public ArrayList(int size) {
 		this.size = size;
 		this.defaultSize = size;
-		array = (E[]) new Object[size]; 
+		array = (E[]) new Object[this.size]; 
 		index = 0;
+	}
+	
+	public ArrayList(List<E> list) throws IllegalArgumentException, EmptyListException {
+		this.size = list.size();
+		this.defaultSize = list.size();
+		array = (E[]) new Object[this.size]; 
+		this.index = 0;
+		
+		for(int i = 0; i < list.size(); i++)
+			this.add(list.get(i));
+		
+		this.index = list.size();
 	}
 
 	public boolean isEmpty() {
@@ -79,5 +100,4 @@ public class ArrayList<E> implements List<E> {
 			size *= 2;
 		}
 	}
-
 }

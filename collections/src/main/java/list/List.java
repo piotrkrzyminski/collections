@@ -9,6 +9,5 @@ public interface List<E> extends Collection<E> {
 	public int size();
 	public E get(int index) throws IllegalArgumentException, EmptyListException;
 	public E remove(int index) throws EmptyListException, IllegalArgumentException;
-	boolean equals(Object o);
 }
 
