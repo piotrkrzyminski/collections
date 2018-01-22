@@ -166,7 +166,7 @@ public class ArrayList<E> implements List<E> {
 		if(size*2 <= Integer.MAX_VALUE) {
 			
 			
-			E[] newArray = (E[]) new Object[size*2];
+			Object[] newArray = new Object[size*2];
 			
 			for(int i = 0; i < size; i++) {
 				newArray[i] = (E) array[i];
