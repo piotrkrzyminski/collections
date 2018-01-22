@@ -22,7 +22,6 @@ This is simple java collections library with most used structures
   <li>Get index of specified element</li>
   <li>Replace element in index</li>
   <li>Trim to specified size</li>
-  <li>ArrayList iterator</li>
   </ul>
   </body>
 </html>
