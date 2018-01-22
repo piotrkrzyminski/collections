@@ -4,7 +4,7 @@
 This is simple java collections library with most used structures. In the future i will add new collections.</br>
 
 <h2>ArrayList</h2>
-This structure uses simple array to store generic elements. Start size of structure must be specified.
+This structure uses simple array to store generic elements.
 If array is filled then copy all element to bigger array to allow to add new elements.
 Available methods:
   <ol>
