@@ -21,7 +21,6 @@ This is simple java collections library with most used structures
   <li>Check if list contains specified element</li>
   <li>Get index of specified element</li>
   <li>Replace element in index</li>
-  <li>Convert to simple array</li>
   <li>Trim to specified size</li>
   <li>ArrayList iterator</li>
   </ul>
