@@ -3,7 +3,7 @@
   <body>
 This is simple java collections library with most used structures
 
-Done:
+<h5>Done</h5>
   <ul>
   <li>Non parameter constructor - defines array with 100 elements</li>
   <li>Constructor with size parameter</li>
@@ -15,8 +15,8 @@ Done:
   <li>Returning if structure is empty</li>
   <li>Returning number of elements in list</li>
   </ul>
-  Every methods was tested by junit tests
-TODO:
+  Every methods was tested by junit tests</br>
+<h5>TODO</h5>
   <ul>
   <li>Check if list contains specified element</li>
   <li>Get index of specified element</li>
