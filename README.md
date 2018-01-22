@@ -8,7 +8,7 @@ This structure uses simple array to store generic elements.
 If array is filled then copy all element to bigger array to allow to add new elements.
 Available methods:
   <ol>
-  <li>Three types of constructor: non-parameter with default list size, wih integer parameter to specify default size and copying constructor</li>
+  <li>Three types of constructor: non-parameter with default list size, with integer parameter to specify default size and copying constructor</li>
   <li><i>add(E)</i> - adding new elements to array. If array is filled creates new bigger array to store new values.</li>
   <li><i>size()</i> - returns number of elements in array.</li>
   <li><i>isEmpty()</i> - returns true if array has no elements.</li>
