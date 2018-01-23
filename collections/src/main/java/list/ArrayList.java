@@ -1,5 +1,7 @@
 package list;
 
+import collections.Iterator;
+
 public class ArrayList<E> implements List<E> {
 	
 	private int size;
@@ -155,6 +157,10 @@ public class ArrayList<E> implements List<E> {
 		}
 		
 		return returnArray;
+	}
+	
+	public Iterator<E> iterator() {
+		return new ArrayListIterator<E>(this);
 	}
 	
 	private boolean isFull() {

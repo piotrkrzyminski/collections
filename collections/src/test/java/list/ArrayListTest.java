@@ -1,7 +1,10 @@
 package list;
 
-import org.junit.*;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
 
 public class ArrayListTest {
 	
@@ -227,5 +230,11 @@ public class ArrayListTest {
 		
 		for(int i = 0; i < 5; i++)
 			assertEquals(list.get(i), array[i]);
+	}
+	
+	@Test
+	public void testIteratorReturn() {
+		List<Integer> list = new ArrayList<Integer>(10);
+		list.iterator();
 	}
 }

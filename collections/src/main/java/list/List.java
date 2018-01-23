@@ -1,6 +1,7 @@
 package list;
 
 import collections.Collection;
+import collections.Iterator;
 
 public interface List<E> extends Collection<E> {
 	public boolean isEmpty();
@@ -13,5 +14,6 @@ public interface List<E> extends Collection<E> {
 	public int indexOf(E e);
 	public boolean replace(E e, int index) throws IndexOutOfBoundsException;
 	public Object[] toArray();
+	public Iterator<E> iterator();
 }
 
