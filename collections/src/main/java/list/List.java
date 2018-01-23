@@ -12,7 +12,6 @@ public interface List<E> extends Collection<E> {
 	public boolean contains(E e);
 	public int indexOf(E e);
 	public boolean replace(E e, int index) throws IndexOutOfBoundsException;
-	public void trimToSize();
 	public Object[] toArray();
 }
 

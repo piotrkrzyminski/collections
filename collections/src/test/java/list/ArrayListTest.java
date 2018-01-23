@@ -203,7 +203,7 @@ public class ArrayListTest {
 	
 	@Test
 	public void testTrimToSize() {
-		List<Integer> list = new ArrayList<Integer>(10);
+		ArrayList<Integer> list = new ArrayList<Integer>(10);
 		
 		for(int i = 0; i < 5; i++)
 			list.add(Integer.valueOf(i));
