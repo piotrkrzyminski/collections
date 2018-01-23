@@ -20,6 +20,14 @@ Available methods:
   <li><i>replace></i> - changes element at specified index</li>
   <li><i>trimToSize()</i> - changes size of list to fill all elements and avoid unnecesary memory alocation</li>
   <li><i>toArray()</i> - returns array with elements copied from list</li>
+  <li><i>iterator()</i> - returns Iterator object that allows to move safely on ArrayList elements</li>
+  </ol>
+  
+<h3>ArrayList Iterator</h3>
+There are two ways to move on ArrayList elements. Using indexes or iterator object. That object has only two methods:
+  <ol>
+  <li><i>hasNext()</i> - returns true if array has next element after current element</li>
+  <li><i>next()</li> - returns element reference after currently used</li>
   </ol>
   
   Every method was tested using jUnit library
