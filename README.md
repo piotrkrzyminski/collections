@@ -24,7 +24,7 @@ Available methods:
   </ol>
   
 <h3>ArrayList Iterator</h3>
-There are two ways to move on ArrayList elements. Using indexes or iterator object. That object has only two methods:
+There are two ways to move across ArrayList elements. Using indexes or iterator object. That object has only two methods:
   <ol>
   <li><i>hasNext()</i> - returns true if array has next element after current element</li>
   <li><i>next()</i> - returns element reference after currently used</li>
