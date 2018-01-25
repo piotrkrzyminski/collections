@@ -4,6 +4,7 @@ import collections.Iterator;
 
 public class LinkedList<E> implements List<E> {
 	
+	@SuppressWarnings("hiding")
 	class Node<E> {
 		E element;
 		Node<E> next;
@@ -22,6 +23,17 @@ public class LinkedList<E> implements List<E> {
 		first = null;
 		last = null;
 		size = 0;
+	}
+	
+	public LinkedList(LinkedList<E> list) {
+		first = null;
+		last = null;
+		size = 0;
+		
+		Iterator<E> it = list.iterator();
+		
+		while(it.hasNext())
+			this.add(it.next());
 	}
 	
 	public Node<E> getFirst() {

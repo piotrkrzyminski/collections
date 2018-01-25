@@ -22,6 +22,19 @@ public class LinkedListTest {
 	}
 	
 	@Test
+	public void testCopyingConstructor() {
+		for(int i = 0; i < 10; i++)
+			list.add(Integer.valueOf(i));
+		
+		LinkedList<Integer> copy = new LinkedList<Integer>(list);
+		
+		assertEquals(list.size(), copy.size());
+		
+		for(int i = 0; i < 10; i++) 
+			assertEquals(list.get(i), copy.get(i));
+	}
+	
+	@Test
 	public void testListSize() {
 		assertEquals(list.size(), 0);
 		
