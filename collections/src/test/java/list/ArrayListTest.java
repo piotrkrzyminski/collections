@@ -121,13 +121,6 @@ public class ArrayListTest {
 		assertEquals(list.get(3), Integer.valueOf(4));
 	}
 	
-	@Test (expected = EmptyListException.class)
-	public void testRemoveElementFromEmptyList() throws IndexOutOfBoundsException, EmptyListException {
-		List<Integer> list = new ArrayList<Integer>(10);
-		
-		list.remove(0);
-	}
-	
 	@Test (expected = IndexOutOfBoundsException.class)
 	public void testRemoveElementWrongIndex() throws IndexOutOfBoundsException, EmptyListException {
 		List<Integer> list = new ArrayList<Integer>(10);
@@ -183,7 +176,7 @@ public class ArrayListTest {
 	}
 	
 	@Test
-	public void testReplacing() throws IndexOutOfBoundsException, EmptyListException {
+	public void testReplacing() throws IndexOutOfBoundsException {
 		List<Integer> list = new ArrayList<Integer>(10);
 		
 		for(int i = 0; i < 5; i++)
@@ -230,11 +223,5 @@ public class ArrayListTest {
 		
 		for(int i = 0; i < 5; i++)
 			assertEquals(list.get(i), array[i]);
-	}
-	
-	@Test
-	public void testIteratorReturn() {
-		List<Integer> list = new ArrayList<Integer>(10);
-		list.iterator();
 	}
 }

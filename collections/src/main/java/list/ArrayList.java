@@ -72,12 +72,9 @@ public class ArrayList<E> implements List<E> {
 	}
 
 	@SuppressWarnings("unchecked")
-	public E remove(int index) throws IndexOutOfBoundsException, EmptyListException {
-		if(index < 0) 
+	public E remove(int index) throws IndexOutOfBoundsException {
+		if(index < 0 || index > size) 
 			throw new IndexOutOfBoundsException("Wrong index");
-		
-		if(this.isEmpty()) 
-			throw new EmptyListException("Can't get element because list is empty.");	
 		
 		E element = (E) array[index];
 		
