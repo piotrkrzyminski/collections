@@ -17,10 +17,11 @@ public class ArrayListIteratorTest {
 	@BeforeClass
 	public static void initialize() {
 		arrayList = new ArrayList<Integer>();
-		iterator = arrayList.iterator();
 		
 		for(int i = 0; i < 10; i++)
 			arrayList.add(Integer.valueOf(i));
+		
+		iterator = arrayList.iterator();
 	}
 	
 	@Test

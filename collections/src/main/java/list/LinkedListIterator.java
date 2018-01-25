@@ -32,6 +32,6 @@ public class LinkedListIterator<E> implements Iterator<E> {
 	}
 
 	public boolean hasNext() {
-		return (!list.isEmpty() && currentNode != null);
+		return (currentNode != null);
 	}
 }

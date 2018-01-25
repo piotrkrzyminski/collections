@@ -8,7 +8,7 @@ public class ArrayListIterator<E> implements Iterator<E>{
 	
 	private int beginIndex;
 	private int currentIndex;
-	ArrayList<E> arrayList;
+	private final ArrayList<E> arrayList;
 	
 	public ArrayListIterator(ArrayList<E> arrayList) {
 		this.beginIndex = 0;
@@ -29,6 +29,7 @@ public class ArrayListIterator<E> implements Iterator<E>{
 	public boolean hasNext() {
 		if(currentIndex < arrayList.size())
 			return true;
+		
 		return false;
 	}
 

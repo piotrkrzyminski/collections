@@ -79,8 +79,7 @@ public class LinkedList<E> implements List<E> {
 	}
 
 	public E get(int index) throws IndexOutOfBoundsException {
-		if(index < 0 || index > size)
-			throw new IndexOutOfBoundsException("Wrong index");
+		checkIndex(index);
 		
 		E element = null;
 		
@@ -93,16 +92,13 @@ public class LinkedList<E> implements List<E> {
 	}
 
 	public E remove(int index) throws IndexOutOfBoundsException {
-		if(index < 0 || index > size)
-			throw new IndexOutOfBoundsException("Wrong index");
+		checkIndex(index);
 		
 		E element = null;
 		
 		if(index == 0) {
 			element = first.element;
-			
 			first = first.next;
-			
 			size--;
 			
 			return element;
@@ -147,8 +143,7 @@ public class LinkedList<E> implements List<E> {
 	}
 
 	public boolean replace(E e, int index) throws IndexOutOfBoundsException {
-		if(index < 0 || index > size)
-			throw new IndexOutOfBoundsException("Wrong index");
+		checkIndex(index);
 		
 		Node<E> replaceNode = first;
 		
@@ -179,6 +174,11 @@ public class LinkedList<E> implements List<E> {
 
 	public Iterator<E> iterator() {
 		return new LinkedListIterator<E>(this);
+	}
+	
+	private void checkIndex(int index) throws IndexOutOfBoundsException {
+		if(index < 0 || index > size)
+			throw new IndexOutOfBoundsException("Invalid index value");
 	}
 
 }

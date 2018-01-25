@@ -4,42 +4,45 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class ArrayListTest {
 	
+	private ArrayList<Integer> list;
+	
+	@Before
+	public void initialize() {
+		list = new ArrayList<Integer>(10);
+	}
+	
 	@Test
 	public void testNonParameterConstructor() {
-		List<Integer> list = new ArrayList<Integer>();
-		assertTrue(list.isEmpty());
-		assertEquals(list.size(), 0);
+		List<Integer> list1 = new ArrayList<Integer>();
+		assertTrue(list1.isEmpty());
+		assertEquals(list1.size(), 0);
 	}
 	
 	@Test
 	public void testIntParameterConstructor() {
-		List<Integer> list = new ArrayList<Integer>(10);
 		assertTrue(list.isEmpty());
 		assertEquals(list.size(), 0);
 	}
 	
 	@Test
 	public void testEmptyList1() {
-		List<Integer> list = new ArrayList<Integer>(10);
 		assertTrue(list.isEmpty());
 	}
 	
 	@Test
 	public void testEmptyList2() {
-		List<Integer> list = new ArrayList<Integer>(10);
 		list.add(Integer.valueOf(1));
 		
 		assertFalse(list.isEmpty());
 	}
 	
 	@Test
-	public void testListSize() {
-		List<Integer> list = new ArrayList<Integer>(10);
-		
+	public void testListSize() {		
 		for(int i = 0; i < 5; i++)
 			list.add(Integer.valueOf(i));
 		
@@ -49,24 +52,18 @@ public class ArrayListTest {
 	
 	@Test
 	public void testAddElement() {
-		List<Integer> list = new ArrayList<Integer>(10);
-		
 		assertTrue(list.add(Integer.valueOf(1)));
 		assertEquals(list.size(),1);
 	}
 	
 	@Test
-	public void testAddElementNotNull() throws IndexOutOfBoundsException, EmptyListException {
-		List<Integer> list = new ArrayList<Integer>(10);
-		
+	public void testAddElementNotNull() throws IndexOutOfBoundsException {
 		assertTrue(list.add(Integer.valueOf(1)));
 		assertTrue(list.get(0) != null);
 	}
 	
 	@Test
 	public void testListResize() {
-		List<Integer> list = new ArrayList<Integer>(10);
-		
 		for(int i = 0; i < 10; i++)
 			list.add(Integer.valueOf(i));
 		
@@ -77,9 +74,7 @@ public class ArrayListTest {
 	}
 	
 	@Test
-	public void testListClear() throws EmptyListException {
-		List<Integer> list = new ArrayList<Integer>(10);
-		
+	public void testListClear() {
 		for(int i = 0; i < 5; i++)
 			list.add(Integer.valueOf(i));
 		
@@ -91,8 +86,6 @@ public class ArrayListTest {
 	
 	@Test
 	public void testGetElement() throws IllegalArgumentException {
-		List<Integer> list = new ArrayList<Integer>(10);
-		
 		for(int i = 0; i < 5; i++)
 			list.add(Integer.valueOf(i));
 		
@@ -102,8 +95,6 @@ public class ArrayListTest {
 	
 	@Test(expected = IndexOutOfBoundsException.class)
 	public void testWrongElementIndex() throws IndexOutOfBoundsException {
-		List<Integer> list = new ArrayList<Integer>(10);
-		
 		for(int i = 0; i < 5; i++)
 			list.add(Integer.valueOf(i));
 		
@@ -111,9 +102,7 @@ public class ArrayListTest {
 	}
 	
 	@Test
-	public void testRemoveElement() throws IndexOutOfBoundsException, EmptyListException {
-		List<Integer> list = new ArrayList<Integer>(10);
-		
+	public void testRemoveElement() throws IndexOutOfBoundsException {
 		for(int i = 0; i < 5; i++)
 			list.add(Integer.valueOf(i));
 		
@@ -122,16 +111,12 @@ public class ArrayListTest {
 	}
 	
 	@Test (expected = IndexOutOfBoundsException.class)
-	public void testRemoveElementWrongIndex() throws IndexOutOfBoundsException, EmptyListException {
-		List<Integer> list = new ArrayList<Integer>(10);
-		
+	public void testRemoveElementWrongIndex() throws IndexOutOfBoundsException {
 		list.remove(-1);
 	}
 	
 	@Test
-	public void testListCloning() throws IndexOutOfBoundsException, EmptyListException {
-		List<Integer> list = new ArrayList<Integer>(10);
-		
+	public void testListCloning() throws IndexOutOfBoundsException {
 		for(int i = 0; i < 5; i++)
 			list.add(Integer.valueOf(i));
 		
@@ -148,8 +133,6 @@ public class ArrayListTest {
 	
 	@Test
 	public void testContainsElement() {
-		List<Integer> list = new ArrayList<Integer>(10);
-		
 		for(int i = 0; i < 5; i++)
 			list.add(Integer.valueOf(i));
 		
@@ -159,8 +142,6 @@ public class ArrayListTest {
 	
 	@Test
 	public void testIndexOfElement() {
-		List<Integer> list = new ArrayList<Integer>(10);
-		
 		for(int i = 0; i < 5; i++)
 			list.add(Integer.valueOf(i));
 		
@@ -170,15 +151,11 @@ public class ArrayListTest {
 	
 	@Test
 	public void testIndexOfElementEmptyList() {
-		List<Integer> list = new ArrayList<Integer>(10);
-		
 		assertEquals(list.indexOf(Integer.valueOf(2)), -1);
 	}
 	
 	@Test
 	public void testReplacing() throws IndexOutOfBoundsException {
-		List<Integer> list = new ArrayList<Integer>(10);
-		
 		for(int i = 0; i < 5; i++)
 			list.add(Integer.valueOf(i));
 		
@@ -188,8 +165,6 @@ public class ArrayListTest {
 	
 	@Test (expected = IndexOutOfBoundsException.class)
 	public void testReplacingInvalidIndex() {
-		List<Integer> list = new ArrayList<Integer>(10);
-		
 		for(int i = 0; i < 5; i++)
 			list.add(Integer.valueOf(i));
 		
@@ -199,8 +174,6 @@ public class ArrayListTest {
 	
 	@Test
 	public void testTrimToSize() {
-		ArrayList<Integer> list = new ArrayList<Integer>(10);
-		
 		for(int i = 0; i < 5; i++)
 			list.add(Integer.valueOf(i));
 		
@@ -214,8 +187,6 @@ public class ArrayListTest {
 	
 	@Test
 	public void testToArrayConversion() {
-		List<Integer> list = new ArrayList<Integer>(10);
-		
 		for(int i = 0; i < 5; i++)
 			list.add(Integer.valueOf(i));
 		

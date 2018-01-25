@@ -23,7 +23,7 @@ public class ArrayList<E> implements List<E> {
 		index = 0;
 	}
 	
-	public ArrayList(List<E> list) throws IndexOutOfBoundsException, EmptyListException {
+	public ArrayList(List<E> list) {
 		this.size = list.size();
 		this.defaultSize = list.size();
 		array = new Object[this.size]; 
@@ -65,16 +65,14 @@ public class ArrayList<E> implements List<E> {
 
 	@SuppressWarnings("unchecked")
 	public E get(int index) throws IndexOutOfBoundsException {
-		if(index < 0) 
-			throw new IndexOutOfBoundsException("Wrong index");
+		checkIndex(index);
 		
 		return (E) array[index];
 	}
 
 	@SuppressWarnings("unchecked")
 	public E remove(int index) throws IndexOutOfBoundsException {
-		if(index < 0 || index > size) 
-			throw new IndexOutOfBoundsException("Wrong index");
+		checkIndex(index);
 		
 		E element = (E) array[index];
 		
@@ -90,6 +88,7 @@ public class ArrayList<E> implements List<E> {
 	public boolean contains(E e) {
 		if(this.indexOf(e) != -1)
 			return true;
+		
 		return false;
 	}
 	
@@ -108,8 +107,7 @@ public class ArrayList<E> implements List<E> {
 	}
 	
 	public boolean replace(E e, int index) throws IndexOutOfBoundsException {
-		if(index < 0 || index > size - 1)
-			throw new IndexOutOfBoundsException("Invalid index value");
+		checkIndex(index);
 		
 		array[index] = e;
 		
@@ -135,9 +133,8 @@ public class ArrayList<E> implements List<E> {
 	public Object[] toArray() {
 		Object[] returnArray = new Object[this.size];
 		
-		for(int i = 0; i < this.size; i++) {
+		for(int i = 0; i < this.size; i++)
 			returnArray[i] = array[i];
-		}
 		
 		return returnArray;
 	}
@@ -153,16 +150,18 @@ public class ArrayList<E> implements List<E> {
 	@SuppressWarnings("unchecked")
 	private void resizeArray() {
 		if(size*2 <= Integer.MAX_VALUE) {
-			
-			
 			Object[] newArray = new Object[size*2];
 			
-			for(int i = 0; i < size; i++) {
+			for(int i = 0; i < size; i++)
 				newArray[i] = (E) array[i];
-			}
 			
 			array = newArray;
 			size *= 2;
 		}
+	}
+	
+	private void checkIndex(int index) throws IndexOutOfBoundsException {
+		if(index < 0 || index > size)
+			throw new IndexOutOfBoundsException("Invalid index value");
 	}
 }
