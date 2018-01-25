@@ -88,17 +88,8 @@ public class ArrayList<E> implements List<E> {
 	}
 	
 	public boolean contains(E e) {
-		if(this.isEmpty())
-			return false;
-		
-		for(int i = 0; i < this.index; i++) {
-			
-			try {
-				if(this.array[i].equals(e) && this.array[i] != null)
-					return true;
-			} catch (IndexOutOfBoundsException exception) { }
-		}
-		
+		if(this.indexOf(e) != -1)
+			return true;
 		return false;
 	}
 	
@@ -108,14 +99,9 @@ public class ArrayList<E> implements List<E> {
 		if(this.isEmpty())
 			return returnIndex;
 	
-		if(this.contains(e)) {
-			for(int i = 0; i < this.index; i++) {
-				
-				try {
-					if(this.array[i].equals(e) && this.array[i] != null)
-						returnIndex = i;
-				} catch (IndexOutOfBoundsException exception) { }
-			}
+		for(int i = 0; i < this.index; i++) {
+			if(this.array[i].equals(e))
+				returnIndex = i;
 		}
 		
 		return returnIndex;
