@@ -2,8 +2,9 @@ package list;
 
 import collections.Iterator;
 import collections.List;
+import collections.Queue;
 
-public class ArrayList<E> implements List<E> {
+public class ArrayList<E> implements List<E>, Queue<E>{
 	
 	private int size;
 	private int defaultSize;
@@ -164,5 +165,16 @@ public class ArrayList<E> implements List<E> {
 	private void checkIndex(int index) throws IndexOutOfBoundsException {
 		if(index < 0 || index > size)
 			throw new IndexOutOfBoundsException("Invalid index value");
+	}
+
+	//QUEUE METHODS
+	
+	@SuppressWarnings("unchecked")
+	public E get() {
+		return (E) array[0];
+	}
+
+	public E remove() {
+		return this.remove(0);
 	}
 }
