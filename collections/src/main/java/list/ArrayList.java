@@ -1,6 +1,7 @@
 package list;
 
 import collections.Iterator;
+import collections.List;
 
 public class ArrayList<E> implements List<E> {
 	

@@ -1,7 +1,4 @@
-package list;
-
-import collections.Collection;
-import collections.Iterator;
+package collections;
 
 public interface List<E> extends Collection<E> {
 	public boolean isEmpty();
