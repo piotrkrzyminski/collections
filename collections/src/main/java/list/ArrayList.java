@@ -1,9 +1,14 @@
 package list;
 
+import java.util.EmptyStackException;
+import java.util.NoSuchElementException;
+
 import collections.Iterator;
 import collections.List;
+import collections.Queue;
+import collections.Stack;
 
-public class ArrayList<E> implements List<E> {
+public class ArrayList<E> implements List<E>, Queue<E>, Stack<E> {
 	
 	private int size;
 	private int defaultSize;
@@ -164,5 +169,50 @@ public class ArrayList<E> implements List<E> {
 	private void checkIndex(int index) throws IndexOutOfBoundsException {
 		if(index < 0 || index > size)
 			throw new IndexOutOfBoundsException("Invalid index value");
+	}
+
+	//QUEUE METHODS
+	
+	@SuppressWarnings("unchecked")
+	public E get() throws NoSuchElementException {
+		if(isEmpty())
+			throw new NoSuchElementException();
+		
+		return (E) array[0];
+	}
+
+	public E remove() throws NoSuchElementException {
+		if(isEmpty())
+			throw new NoSuchElementException();
+		
+		return this.remove(0);
+	}
+
+	//STACK METHODS
+	
+	public E pop() throws EmptyStackException {
+		if(isEmpty()) 
+			throw new EmptyStackException();
+		
+		return this.get(--index);
+	}
+	
+	public E peek() throws EmptyStackException {
+		if(isEmpty()) 
+			throw new EmptyStackException();
+		
+		return this.get(index - 1);
+	}
+
+	public boolean push(E e) {
+		if(this.isFull())
+			this.resizeArray();
+		
+		array[index] = e;
+
+		if(array[index++] == null)
+			return false;
+		
+		return true;
 	}
 }

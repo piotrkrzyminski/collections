@@ -2,8 +2,9 @@ package list;
 
 import collections.Iterator;
 import collections.List;
+import collections.Queue;
 
-public class LinkedList<E> implements List<E> {
+public class LinkedList<E> implements List<E>, Queue<E> {
 	
 	@SuppressWarnings("hiding")
 	class Node<E> {
@@ -180,6 +181,14 @@ public class LinkedList<E> implements List<E> {
 	private void checkIndex(int index) throws IndexOutOfBoundsException {
 		if(index < 0 || index > size)
 			throw new IndexOutOfBoundsException("Invalid index value");
+	}
+
+	public E get() {
+		return this.get(0);
+	}
+
+	public E remove() {
+		return this.remove(0);
 	}
 
 }
