@@ -89,6 +89,6 @@ public class LinkedListQueueTest {
 		assertEquals(queue.size(), 9);
 		
 		for(int i = 1; i < 10; i++)
-			assertEquals(queue.get(), Integer.valueOf(i));
+			assertEquals(queue.remove(), Integer.valueOf(i));
 	}
 }

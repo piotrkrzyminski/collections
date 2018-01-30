@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.util.NoSuchElementException;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -102,5 +104,15 @@ public class ArrayListQueueTest {
 		queue.add(Integer.valueOf(1));
 		
 		assertTrue(queue.get().equals(Integer.valueOf(0)));
+	}
+	
+	@Test (expected = NoSuchElementException.class)
+	public void testGetFromEmptyQueue() {
+		queue.get();
+	}
+	
+	@Test (expected = NoSuchElementException.class)
+	public void testRemoveFromEmptyQueue() {
+		queue.remove();
 	}
 }
