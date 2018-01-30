@@ -1,7 +1,6 @@
 package list;
 
 import static org.junit.Assert.assertEquals;
-
 import java.util.NoSuchElementException;
 
 import org.junit.Before;

@@ -1,12 +1,14 @@
 package list;
 
 import java.util.NoSuchElementException;
+import java.util.EmptyStackException;
 
 import collections.Iterator;
 import collections.List;
 import collections.Queue;
+import collections.Stack;
 
-public class LinkedList<E> implements List<E>, Queue<E> {
+public class LinkedList<E> implements List<E>, Queue<E>, Stack<E> {
 	
 	@SuppressWarnings("hiding")
 	class Node<E> {
@@ -204,5 +206,25 @@ public class LinkedList<E> implements List<E>, Queue<E> {
 			throw new NoSuchElementException();
 		
 		return this.remove(0);
+	}
+	
+	//STACK METHODS
+
+	public boolean push(E e) {
+		return this.add(e);
+	}
+
+	public E peek() throws EmptyStackException {
+		if(isEmpty())
+			throw new EmptyStackException();
+		
+		return last.element;
+	}
+	
+	public E pop() throws EmptyStackException {
+		if(isEmpty())
+			throw new EmptyStackException();
+		
+		return this.remove(size-1);
 	}
 }
