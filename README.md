@@ -9,25 +9,25 @@ This structure uses simple array to store generic elements. You can create list 
 Available methods:
   <ol>
   <li>Three types of constructor: non-parameter with default list size, with integer parameter to specify default size and copying constructor</li>
-  <li><i>add(E)</i> - adding new elements to array. If array is filled creates new bigger array to store new values.</li>
-  <li><i>size()</i> - returns number of elements in array.</li>
-  <li><i>isEmpty()</i> - returns true if array has no elements.</li>
-  <li><i>clear()</i> - deletes all elements in array and sets its size to default.</li>
-  <li><i>get(int)</i> - returns element from array at index passed in parameter.</li>
-  <li><i>remove(int)</i> - the same as get() but also remove element from array.</li>
-  <li><i>contains()</i> - returns true if element passed in parameter is in structure</li>
-  <li><i>indexOf()</i> - returns index of element in list or -1 if not exists</li>
-  <li><i>replace></i> - changes element at specified index</li>
-  <li><i>trimToSize()</i> - changes size of list to fill all elements and avoid unnecesary memory alocation</li>
-  <li><i>toArray()</i> - returns array with elements copied from list</li>
-  <li><i>iterator()</i> - returns Iterator object that allows to move safely on ArrayList elements</li>
+  <li><i>void add(E)</i> - adding new elements to array. If array is filled creates new bigger array to store new values.</li>
+  <li><i>int size()</i> - returns number of elements in array.</li>
+  <li><i>boolean isEmpty()</i> - returns true if array has no elements.</li>
+  <li><i>void clear()</i> - deletes all elements in array and sets its size to default.</li>
+  <li><i>E get(int)</i> - returns element from array at index passed in parameter.</li>
+  <li><i>E remove(int)</i> - the same as get() but also remove element from array.</li>
+  <li><i>boolean contains(E)</i> - returns true if element passed in parameter is in structure</li>
+  <li><i>int indexOf(E)</i> - returns index of element in list or -1 if not exists</li>
+  <li><i>void replace(E, int)</i> - changes element at specified index</li>
+  <li><i>void trimToSize()</i> - changes size of list to fill all elements and avoid unnecesary memory alocation</li>
+  <li><i>Object[] toArray()</i> - returns array with elements copied from list</li>
+  <li><i>Iterator[] iterator()</i> - returns Iterator object that allows to move safely on ArrayList elements</li>
   </ol>
   
 <h3>ArrayList Iterator</h3>
 There are two ways to move across ArrayList elements. Using indexes or iterator object. That object has only two methods:
   <ol>
-  <li><i>hasNext()</i> - returns true if array has next element after current element</li>
-  <li><i>next()</i> - returns element reference after currently used</li>
+  <li><i>boolean hasNext()</i> - returns true if array has next element after current element</li>
+  <li><i>E next()</i> - returns element reference after currently used</li>
   </ol>
   
 <h2>Singly linked list</h2>
@@ -35,47 +35,47 @@ Doubly linked list stores elements in nodes. Besides elements, each node contain
 
 Available methods:
   <ol>
-  <li><i>add(E)</i> - create new node with element and put it at the end of list</li>
-  <li><i>size()</i> - returns number of nodes.</li>
-  <li><i>isEmpty()</i> - returns true if first node is null.</li>
-  <li><i>clear()</i> - change first node to null.</li>
-  <li><i>get()</i> - returns element from list at index passed in parameter.</li>
-  <li><i>remove()</i> - the same as get() but also remove node from list.</li>
-  <li><i>contains()</i> - returns true if element passed in parameter is in structure</li>
-  <li><i>indexOf()</i> - returns index of element in list or -1 if not exists</li>
-  <li><i>replace></i> - changes element at specified index</li>
-  <li><i>toArray()</i> - returns array with elements copied from list</li>
-  <li><i>iterator()</i> - returns Iterator object that allows to move safely on LinkedList elements</li>
+  <li><i>void add(E)</i> - create new node with element and put it at the end of list</li>
+  <li><i>int size()</i> - returns number of nodes.</li>
+  <li><i>boolean isEmpty()</i> - returns true if first node is null.</li>
+  <li><i>void clear()</i> - change first node to null.</li>
+  <li><i>E get(int)</i> - returns element from list at index passed in parameter.</li>
+  <li><i>E remove(int)</i> - the same as get() but also remove node from list.</li>
+  <li><i>boolean contains(E)</i> - returns true if element passed in parameter is in structure</li>
+  <li><i>int indexOf(E)</i> - returns index of element in list or -1 if not exists</li>
+  <li><i>void replace(E, int)</i> - changes element at specified index</li>
+  <li><i>void toArray()</i> - returns array with elements copied from list</li>
+  <li><i>Iterator[] iterator()</i> - returns Iterator object that allows to move safely on LinkedList elements</li>
   </ol>
   
   <h3>Singly linked list Iterator</h3>
 Iterator allows to move safely across nodes. It has only two methods:
   <ol>
-  <li><i>hasNext()</i> - returns true if array has next element after current element</li>
-  <li><i>next()</i> - returns element reference after currently used</li>
+  <li><i>boolean hasNext()</i> - returns true if array has next element after current element</li>
+  <li><i>E next()</i> - returns element reference after currently used</li>
   </ol>
   
 <h2>Queue ArrayList and LinkedList implementation</h2>
 Queue uses almost every method from standard list class. But except taking element from end of the list it takes it from beginning.</br>
   
   Available methods:
-  <li><i>add(E)</i> - adding new elements at the end of structure</li>
-  <li><i>size()</i> - returns number of elements in structure.</li>
-  <li><i>isEmpty()</i> - returns true if structure has no elements.</li>
-  <li><i>clear()</i> - deletes all elements in structure.</li>
-  <li><i>get()</i> - returns element from structure at 0 index</li>
-  <li><i>remove()</i> - the same as get() but also remove element from structure.</li>
+  <li><i>void add(E)</i> - adding new elements at the end of structure</li>
+  <li><i>int size()</i> - returns number of elements in structure.</li>
+  <li><i>boolean isEmpty()</i> - returns true if structure has no elements.</li>
+  <li><i>void clear()</i> - deletes all elements in structure.</li>
+  <li><i>E get()</i> - returns element from structure at 0 index</li>
+  <li><i>E remove()</i> - the same as get() but also remove element from structure.</li>
   
 <h2>Stack ArrayList and LinkedList implementation</h2>
 Stack add element to the end of structure but in contrast to queue, it takes elements from end.</br>
 
  Available methods:
-  <li><i>push(E)</i> - adding new elements at the end of structure</li>
-  <li><i>size()</i> - returns number of elements in structure.</li>
-  <li><i>isEmpty()</i> - returns true if structure has no elements.</li>
-  <li><i>clear()</i> - deletes all elements in structure.</li>
-  <li><i>peek()</i> - returns element from structure at 0 index</li>
-  <li><i>pop()</i> - the same as peek() but also remove element from structure.</li>
+  <li><i>boolean push(E)</i> - adding new elements at the end of structure</li>
+  <li><i>int size()</i> - returns number of elements in structure.</li>
+  <li><i>boolean isEmpty()</i> - returns true if structure has no elements.</li>
+  <li><i>void clear()</i> - deletes all elements in structure.</li>
+  <li><i>E peek()</i> - returns element from structure at 0 index</li>
+  <li><i>E pop()</i> - the same as peek() but also remove element from structure.</li>
   
   Every method was tested using jUnit library
   </body>
