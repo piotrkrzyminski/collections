@@ -31,7 +31,7 @@ There are two ways to move across ArrayList elements. Using indexes or iterator 
   </ol>
   
 <h2>Singly linked list</h2>
-Singly linked list stores elements in nodes. Besides elements, each node contains also information about next node. This sort of collection don't have size limit. But access to each node may take more time than in ArrayList implementation.</br> 
+Doubly linked list stores elements in nodes. Besides elements, each node contains also information about next and previous node. This sort of collection don't have size limit. But access to each node may take more time than in ArrayList implementation.</br> 
 
 Available methods:
   <ol>
@@ -39,8 +39,8 @@ Available methods:
   <li><i>size()</i> - returns number of nodes.</li>
   <li><i>isEmpty()</i> - returns true if first node is null.</li>
   <li><i>clear()</i> - change first node to null.</li>
-  <li><i>get(int)</i> - returns element from list at index passed in parameter.</li>
-  <li><i>remove(int)</i> - the same as get() but also remove node from list.</li>
+  <li><i>get()</i> - returns element from list at index passed in parameter.</li>
+  <li><i>remove()</i> - the same as get() but also remove node from list.</li>
   <li><i>contains()</i> - returns true if element passed in parameter is in structure</li>
   <li><i>indexOf()</i> - returns index of element in list or -1 if not exists</li>
   <li><i>replace></i> - changes element at specified index</li>
@@ -59,12 +59,23 @@ Iterator allows to move safely across nodes. It has only two methods:
 Queue uses almost every method from standard list class. But except taking element from end of the list it takes it from beginning.</br>
   
   Available methods:
-  <li><i>add(E)</i> - adding new elements to array. If array is filled creates new bigger array to store new values.</li>
-  <li><i>size()</i> - returns number of elements in array.</li>
-  <li><i>isEmpty()</i> - returns true if array has no elements.</li>
-  <li><i>clear()</i> - deletes all elements in array and sets its size to default.</li>
-  <li><i>get()</i> - returns element from array at 0 index</li>
-  <li><i>remove()</i> - the same as get() but also remove element from array.</li>
+  <li><i>add(E)</i> - adding new elements at the end of structure</li>
+  <li><i>size()</i> - returns number of elements in structure.</li>
+  <li><i>isEmpty()</i> - returns true if structure has no elements.</li>
+  <li><i>clear()</i> - deletes all elements in structure.</li>
+  <li><i>get()</i> - returns element from structure at 0 index</li>
+  <li><i>remove()</i> - the same as get() but also remove element from structure.</li>
+  
+<h2>Stack ArrayList and LinkedList implementation</h2>
+Stack add element to the end of structure but in contrast to queue, it takes elements from end.</br>
+
+ Available methods:
+  <li><i>push(E)</i> - adding new elements at the end of structure</li>
+  <li><i>size()</i> - returns number of elements in structure.</li>
+  <li><i>isEmpty()</i> - returns true if structure has no elements.</li>
+  <li><i>clear()</i> - deletes all elements in structure.</li>
+  <li><i>peek()</i> - returns element from structure at 0 index</li>
+  <li><i>pop()</i> - the same as peek() but also remove element from structure.</li>
   
   Every method was tested using jUnit library
   </body>
