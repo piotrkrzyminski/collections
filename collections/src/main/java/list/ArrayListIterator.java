@@ -32,5 +32,4 @@ public class ArrayListIterator<E> implements Iterator<E>{
 		
 		return false;
 	}
-
 }

@@ -1,5 +1,7 @@
 package list;
 
+import java.util.NoSuchElementException;
+
 import collections.Iterator;
 import collections.List;
 import collections.Queue;
@@ -10,10 +12,12 @@ public class LinkedList<E> implements List<E>, Queue<E> {
 	class Node<E> {
 		E element;
 		Node<E> next;
+		Node<E> previous;
 		
 		Node(E element) {
 			this.element = element;
 			next = null;
+			previous = null;
 		}
 	}
 
@@ -58,6 +62,7 @@ public class LinkedList<E> implements List<E>, Queue<E> {
 			last = first;
 		} else {
 			last.next = node;
+			node.previous = last;
 			last = node;
 		}
 		
@@ -97,22 +102,24 @@ public class LinkedList<E> implements List<E>, Queue<E> {
 		checkIndex(index);
 		
 		E element = null;
-		
-		if(index == 0) {
-			element = first.element;
-			first = first.next;
-			size--;
-			
-			return element;
-		}
-				
+	
 		Node<E> deleteNode = first;
 		
-		for(int i = 1; i < index; i++ )
+		for(int i = 0; i < index; i++)
 			deleteNode = deleteNode.next;
 		
-		element = deleteNode.next.element;
-		deleteNode.next = deleteNode.next.next;
+		element = deleteNode.element;
+		
+		if(deleteNode.equals(first)) {
+			first = first.next;
+		} else if(deleteNode.equals(last)) {
+			last = last.previous;
+			last.next = null;
+		} else {
+			deleteNode.previous.next = deleteNode.next;
+			deleteNode.next.previous = deleteNode.previous;
+		}
+		
 		size--;
 		
 		return element;
@@ -182,13 +189,20 @@ public class LinkedList<E> implements List<E>, Queue<E> {
 		if(index < 0 || index > size)
 			throw new IndexOutOfBoundsException("Invalid index value");
 	}
+	
+	//QUEUE METHODS
 
-	public E get() {
+	public E get() throws NoSuchElementException {
+		if(isEmpty())
+			throw new NoSuchElementException();
+		
 		return this.get(0);
 	}
 
-	public E remove() {
+	public E remove() throws NoSuchElementException {
+		if(isEmpty())
+			throw new NoSuchElementException();
+		
 		return this.remove(0);
 	}
-
 }
