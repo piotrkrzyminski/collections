@@ -55,6 +55,17 @@ Iterator allows to move safely across nodes. It has only two methods:
   <li><i>next()</i> - returns element reference after currently used</li>
   </ol>
   
+<h2>Queue ArrayList and LinkedList implementation</h2>
+Queue uses almost every method from standard list class. But except taking element from end of the list it takes it from beginning.</br>
+  
+  Available methods:
+  <li><i>add(E)</i> - adding new elements to array. If array is filled creates new bigger array to store new values.</li>
+  <li><i>size()</i> - returns number of elements in array.</li>
+  <li><i>isEmpty()</i> - returns true if array has no elements.</li>
+  <li><i>clear()</i> - deletes all elements in array and sets its size to default.</li>
+  <li><i>get()</i> - returns element from array at 0 index</li>
+  <li><i>remove()</i> - the same as get() but also remove element from array.</li>
+  
   Every method was tested using jUnit library
   </body>
  </html>
