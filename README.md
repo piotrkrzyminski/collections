@@ -83,7 +83,7 @@ Queue uses almost every method from standard list class. But except taking eleme
       <li><i>E minimun()</i></li>
       <li><i>void clear()</i></li>
   </ol>
-  <h3>Singly linked list Iterator</h3>
+  <h3>Tree Iterator</h3>
   Iterator allows to move safely across nodes. It has only two methods:
   <ol>
   <li><i>hasNext()</i> - returns true if array has next element after current element</li>
