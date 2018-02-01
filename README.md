@@ -3,6 +3,7 @@
 <body>
 This is simple java collections library with most used structures. In the future i will add new collections.</br>
 
+<h1>Lists</h1>
 <h2>ArrayList</h2>
 This structure uses simple array to store generic elements. You can create list with specified size of use default. When array will be filled add another element causes increasing array size by 2. This operation takes quite time because it copying all elements from smaller array to bigger. Howewer access to each node is very fast.</br>
 
@@ -31,7 +32,7 @@ There are two ways to move across ArrayList elements. Using indexes or iterator 
   </ol>
   
 <h2>Singly linked list</h2>
-Singly linked list stores elements in nodes. Besides elements, each node contains also information about next node. This sort of collection don't have size limit. But access to each node may take more time than in ArrayList implementation.</br> 
+Singly linked list stores elements in nodes. Besides elements, each node contains also information about next node. This sort of collection don't have size limit. But access to each node may take more time than in ArrayList implementation.</br>
 
 Available methods:
   <ol>
@@ -65,6 +66,23 @@ Queue uses almost every method from standard list class. But except taking eleme
   <li><i>clear()</i> - deletes all elements in array and sets its size to default.</li>
   <li><i>get()</i> - returns element from array at 0 index</li>
   <li><i>remove()</i> - the same as get() but also remove element from array.</li>
+  
+<h1>Trees</h1>
+<h2>Binary tree</h2>
+<p>Binary tree is a tree data structure in which each node has at most two children, which are referred to as the left child and the right child<p>
+  Available methods:
+  <ol>
+    <li><i>void insert(E)</i></li>
+    <li><i>E getRoot()<i></li>
+      <li><i>int countNodes()</i></li>
+      <li><i>void printAscending()</i></li>
+      <li><i>void printDescending()</i></li>
+      <li><i>boolean contains(E)</i></li>
+      <li><i>boolean isEmpty()</i></li>
+      <li><i>E maximum()</i></li>
+      <li><i>E minimun()</i></li>
+      <li><i>void clear()</i></li>
+  </ol>
   
   Every method was tested using jUnit library
   </body>
