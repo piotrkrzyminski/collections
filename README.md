@@ -75,8 +75,8 @@ Queue uses almost every method from standard list class. But except taking eleme
     <li><i>void insert(E)</i></li>
     <li><i>E getRoot()<i></li>
       <li><i>int countNodes()</i></li>
-      <li><i>printAscending</i></li>
-      <li><i>printDescending</i></li>
+      <li><i>void printAscending()</i></li>
+      <li><i>void printDescending()</i></li>
       <li><i>boolean contains(E)</i></li>
       <li><i>boolean isEmpty()</i></li>
       <li><i>E maximum()</i></li>
