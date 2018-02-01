@@ -158,4 +158,14 @@ public class BinaryTree<E extends Comparable<E>> implements Tree<E> {
 	public Iterator<E> iterator() {
 		return new BinaryTreeIterator<E>(root);
 	}
+	
+	public List<E> toList() {
+		List<E> list = new ArrayList<E>(this.countNodes());
+		Iterator<E> it = this.iterator();
+		
+		while(it.hasNext())
+			list.add(it.next());
+		
+		return list;
+	}
 }

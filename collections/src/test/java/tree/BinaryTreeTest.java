@@ -9,7 +9,9 @@ import java.util.NoSuchElementException;
 import org.junit.Before;
 import org.junit.Test;
 
+import collections.List;
 import collections.Tree;
+import list.ArrayList;
 
 public class BinaryTreeTest {
 
@@ -140,5 +142,17 @@ public class BinaryTreeTest {
 			tree.insert((int) (Math.random() * 10000));
 		
 		assertFalse(tree.isEmpty());
+	}
+	
+	@Test
+	public void testConvertToList() {
+		for(int i = 0; i < 10; i++)
+			tree.insert(Integer.valueOf(i));
+		
+		List<Integer> list = new ArrayList<Integer>(tree.countNodes());
+		
+		list = tree.toList();
+		
+		assertEquals(list.size(), 10);
 	}
 }
