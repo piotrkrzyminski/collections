@@ -2,6 +2,7 @@ package tree;
 
 import java.util.NoSuchElementException;
 
+import collections.Iterator;
 import collections.List;
 import collections.Tree;
 import list.ArrayList;
@@ -152,5 +153,9 @@ public class BinaryTree<E extends Comparable<E>> implements Tree<E> {
 		root.left = null;
 		root.right = null;
 		root = null;
+	}
+
+	public Iterator<E> iterator() {
+		return new BinaryTreeIterator<E>(root);
 	}
 }

@@ -13,4 +13,5 @@ public interface Tree<E> {
 	public E maximum() throws NoSuchElementException;
 	public E minimum() throws NoSuchElementException;
 	public void clear();
+	public Iterator<E> iterator();
 }

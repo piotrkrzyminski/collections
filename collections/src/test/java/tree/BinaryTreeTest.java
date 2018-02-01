@@ -9,7 +9,6 @@ import java.util.NoSuchElementException;
 import org.junit.Before;
 import org.junit.Test;
 
-import collections.List;
 import collections.Tree;
 
 public class BinaryTreeTest {
