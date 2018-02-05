@@ -3,16 +3,16 @@ package collections;
 import java.util.NoSuchElementException;
 
 public interface Tree<E> {
-	public void insert(E e);
-	public E getRoot() throws NoSuchElementException;
-	public int countNodes();
-	public void printAscending();
-	public void printDescending();
-	public boolean contains(E e);
-	public boolean isEmpty();
-	public E maximum() throws NoSuchElementException;
-	public E minimum() throws NoSuchElementException;
-	public void clear();
-	public Iterator<E> iterator();
-	public List<E> toList();
+	void insert(E e);
+	E getRoot() throws NoSuchElementException;
+	int countNodes();
+	void printAscending();
+	void printDescending();
+	boolean contains(E e);
+	boolean isEmpty();
+	E maximum() throws NoSuchElementException;
+	E minimum() throws NoSuchElementException;
+	void clear();
+	Iterator<E> iterator();
+	List<E> toList();
 }

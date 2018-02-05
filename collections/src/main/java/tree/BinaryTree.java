@@ -38,7 +38,7 @@ public class BinaryTree<E extends Comparable<E>> implements Tree<E> {
 		} else {
 			if(e.compareTo(node.element) < 0)
 				node.right = insert(node.right, e);
-			else
+			else if(e.compareTo(node.element) > 0)
 				node.left = insert(node.left, e);
 		}
 		

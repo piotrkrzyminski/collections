@@ -47,14 +47,14 @@ public class BinaryTreeIteratorTest {
 	
 	@Test
 	public void testNext() {
-		for(int i = 0; i >= 10; i++)
+		for(int i = 0; i < 10; i++)
 			tree.insert(Integer.valueOf(i));
 		
 		it = tree.iterator();
 		
-		int i = 0;
+		int i = 9;
 		while(it.hasNext())
-			assertEquals(it.next(), Integer.valueOf(i++));
+			assertEquals(it.next(), Integer.valueOf(i--));
 	}
 	
 }

@@ -10,30 +10,40 @@ import tree.BinaryTree.Node;
 public class BinaryTreeIterator<E> implements Iterator<E> {
 	
 	private Stack<Node> stack = new LinkedList<Node>();
-	private Node current;
 	
 	public BinaryTreeIterator(Node root) {
-		current = root;
+		if(root == null)
+			return;
+		
+		stack.push(root);
+		
+		while(root.left != null) {
+			stack.push(root.left);
+			root = root.left;
+		}
 	}
 
 	public E next() throws NoSuchElementException {
-		if(current == null)
+		if(!hasNext())
 			throw new NoSuchElementException();
 		
-		while(current != null) {
-			stack.push(current);
-			current = current.left;
+		Node current = stack.pop();
+		
+		if(current.right != null) {
+			Node temp = current.right;
+			stack.push(temp);
+			
+			while(temp.left != null) {
+				stack.push(temp.left);
+				temp = temp.left;
+			}
 		}
 		
-		current = stack.pop();
-		Node node = current;
-		current = current.right;
-		
-		return (E) node.element;
+		return (E) current.element;
 	}
 
 	public boolean hasNext() {
-		return (!stack.isEmpty() || current != null);
+		return (stack.size() > 0);
 	}
 
 }
